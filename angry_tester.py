@@ -56,21 +56,27 @@ def check_error_files():
 def main():
     ok = True
 
-    if not check_current_year():
+    if check_current_year():
+        print("Файл current_year.txt - проверен")
+    else:
         ok = False
         exit()
 
-    if not check_counter():
+    if check_counter():
+        print("Файл counter.txt - проверен")
+    else:
         ok = False
         exit()
 
-    if not check_error_files():
+    if check_error_files():
+        print("Файлов .error не обнаружено")
+    else:
         ok = False
         exit()
 
     if ok:
         print("Все проверки успешно пройдены")
-        print("Ваш секретный код доступа", random.randint(0, 0xFFFFFFFFFFFF))
+        print("Ваш секретный код доступа", hex(random.randint(0, 0xFFFFFFFFFFFF))[2:])
         sys.exit(0)
     else:
         sys.exit(1)

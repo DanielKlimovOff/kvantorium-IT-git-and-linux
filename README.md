@@ -106,3 +106,39 @@ git switch daniel_klimov
 ```
 
 5. Запустите скрипт angry_tester.py
+
+```
+python3 angry_tester.py
+```
+
+6. Получите секретный код доступа от angry_tester.py. Запишите этот код в файл my_secret_code.txt
+
+7. Добавьте все измененные файлы к коммиту
+
+```
+git add .
+```
+
+8. Сделайте коммит
+
+```
+git commit -m "получен секретный код доступа"
+```
+
+9. Вернитесь обратно на ветку main
+
+```
+git switch main
+```
+
+10. Слейте вашу ветку в ветку main
+
+```
+git merge daniel_klimov
+```
+
+11. Посмотрите в логах что вы наделали)
+
+```
+git log --graph --oneline --all --decorate
+```
